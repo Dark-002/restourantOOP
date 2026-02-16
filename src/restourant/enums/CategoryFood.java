@@ -1,17 +1,14 @@
 package restourant.enums;
 
-enum Category {
+public enum CategoryFood {
     breakfast("breakfast"),
     dinner("dinner"),
-    
-    first("first"),
-    second("second"),
-    fastFood("fastFood"),
-    hot("hot");
+    afternoonSnack("afternoonSnack"),
+    fastFood("fastFood"),;
 
     private final String categ;
 
-    Category(String categ){
+    CategoryFood(String categ){
         this.categ = categ;
     }
 

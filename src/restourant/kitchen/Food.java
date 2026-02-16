@@ -1,13 +1,14 @@
 package restourant.kitchen;
 
-public class Food {
-    String name;
-    String category;
-    double cost;
+import restourant.enums.CategoryFood;
 
-    public Food(String name, String categ, double cost){
+public class Food {
+    public String name;
+    double cost;
+    CategoryFood categ;
+    public Food(String name, CategoryFood categ, double cost){
         this.name = name;
-        this.category = categ;
+        this.categ = categ;
         this.cost = cost;
     }
 
@@ -19,12 +20,12 @@ public class Food {
         this.cost = cost;
     }
 
-    public String getCategory() {
-        return category;
+    public CategoryFood getCategory() {
+        return categ;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setCategory( CategoryFood categ) {
+        this.categ = categ;
     }
 
     public String getName() {
@@ -38,6 +39,6 @@ public class Food {
     @Override
     public String toString() {
 
-        return (String.format("название: %s цена: %d категория: %s", name, cost, category));
+        return (String.format("название: %s цена: %.2f  категория: %s", name, cost, categ));
     }
 }

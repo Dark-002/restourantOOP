@@ -39,6 +39,6 @@ public class Food {
     @Override
     public String toString() {
 
-        return (String.format("название: %s цена: %.2f  категория: %s", name, cost, categ));
+        return (String.format("name: %s cost: %.2f category: %s", name, cost, categ));
     }
 }

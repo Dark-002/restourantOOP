@@ -15,6 +15,7 @@ public class Table {
     public Table(int num, StatTables stat){
         this.num = num;
         this.stat = stat;
+
     }
 
     public int getNum() {

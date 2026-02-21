@@ -20,15 +20,23 @@ public class Order {
         this.totalCost = 0.0;
 
     }
-    private void calcTotal(){
+    public void calcTotal(){
         totalCost = 0;
         for(Food food: listFood){
             totalCost += food.getCost();
         }
     }
+
     public void addFood(Food food){
         listFood.add(food);
         calcTotal();
     }
 
+    public ArrayList<Food> getListFood() {
+        return listFood;
+    }
+
+    public double getTotalCost() {
+        return totalCost;
+    }
 }

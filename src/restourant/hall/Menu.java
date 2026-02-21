@@ -1,5 +1,6 @@
 package restourant.hall;
 import restourant.enums.CategoryFood;
+import restourant.enums.StatTables;
 import restourant.kitchen.Food;
 import java.util.ArrayList;
 
@@ -73,7 +74,17 @@ public class Menu {
         return menuFastFood;
 
     }
-
+    public void addFood(String name, CategoryFood cat, double cost ){
+        if (cat == CategoryFood.afternoonSnack){
+            menuAfternoonSnack.add(new Food(name, cat, cost));
+        }else if (cat == CategoryFood.dinner){
+            menuDinner.add(new Food(name, cat, cost));
+        }else if (cat == CategoryFood.breakfast){
+            menuBreakfast.add(new Food(name, cat, cost));
+        }else if (cat == CategoryFood.fastFood){
+            menuFastFood.add(new Food(name, cat, cost));
+        }
+    }
 
 
 }

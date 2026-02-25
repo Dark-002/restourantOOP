@@ -85,6 +85,28 @@ public class Menu {
             menuFastFood.add(new Food(name, cat, cost));
         }
     }
+    public void RemoveFood(int num, CategoryFood cat  ){
+        if (cat == CategoryFood.afternoonSnack){
+            menuAfternoonSnack.remove(menuAfternoonSnack.get(1));
+        }else if (cat == CategoryFood.dinner){
+            menuDinner.remove(menuDinner.get(1));
+        }else if (cat == CategoryFood.breakfast){
+            menuBreakfast.remove(menuBreakfast.get(1));
+        }else if (cat == CategoryFood.fastFood){
+            menuFastFood.remove(menuFastFood.get(1));
+        }
+    }
+    public  void erase(CategoryFood cat){
+        if (cat == CategoryFood.afternoonSnack){
+            menuAfternoonSnack.clear();
+        }else if (cat == CategoryFood.dinner){
+            menuDinner.clear();
+        }else if (cat == CategoryFood.breakfast){
+            menuBreakfast.clear();
+        }else if (cat == CategoryFood.fastFood){
+            menuFastFood.clear();
+        }
+    }
 
 
 }

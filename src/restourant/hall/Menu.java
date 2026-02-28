@@ -41,6 +41,11 @@ public class Menu {
         return menuBreakfast;
 
     }
+
+    public ArrayList<Food> getMenuBreakFastCopy() {
+        return new ArrayList<>(menuBreakfast);
+    }
+
     public ArrayList<Food> getMenuDinner() {
         if (!menuDinner.isEmpty()) {
             for (int i = 0; i < menuDinner.size(); i++) {
@@ -52,6 +57,11 @@ public class Menu {
         return menuDinner;
 
     }
+
+    public ArrayList<Food> getMenuDinnerCopy() {
+        return new ArrayList<>(menuDinner);
+    }
+
     public ArrayList<Food> getMenuAfterSnack() {
         if (!menuAfternoonSnack.isEmpty()) {
             for (int i = 0; i < menuAfternoonSnack.size(); i++) {
@@ -63,6 +73,11 @@ public class Menu {
         return menuAfternoonSnack;
 
     }
+
+    public ArrayList<Food> getMenuAfterSnackCopy() {
+        return new ArrayList<>(menuAfternoonSnack);
+    }
+
     public ArrayList<Food> getMenuFastFood() {
         if (!menuFastFood.isEmpty()) {
             for (int i = 0; i < menuFastFood.size(); i++) {
@@ -74,6 +89,11 @@ public class Menu {
         return menuFastFood;
 
     }
+
+    public ArrayList<Food> getMenuFastFoodCopy() {
+        return new ArrayList<>(menuFastFood);
+    }
+
     public void addFood(String name, CategoryFood cat, double cost ){
         if (cat == CategoryFood.afternoonSnack){
             menuAfternoonSnack.add(new Food(name, cat, cost));
@@ -85,18 +105,28 @@ public class Menu {
             menuFastFood.add(new Food(name, cat, cost));
         }
     }
+
     public void RemoveFood(int num, CategoryFood cat  ){
         if (cat == CategoryFood.afternoonSnack){
-            menuAfternoonSnack.remove(menuAfternoonSnack.get(1));
+            if (num >= 0 && num < menuAfternoonSnack.size()) {
+                menuAfternoonSnack.remove(num);
+            }
         }else if (cat == CategoryFood.dinner){
-            menuDinner.remove(menuDinner.get(1));
+            if (num >= 0 && num < menuDinner.size()) {
+                menuDinner.remove(num);
+            }
         }else if (cat == CategoryFood.breakfast){
-            menuBreakfast.remove(menuBreakfast.get(1));
+            if (num >= 0 && num < menuBreakfast.size()) {
+                menuBreakfast.remove(num);
+            }
         }else if (cat == CategoryFood.fastFood){
-            menuFastFood.remove(menuFastFood.get(1));
+            if (num >= 0 && num < menuFastFood.size()) {
+                menuFastFood.remove(num);
+            }
         }
     }
-    public  void erase(CategoryFood cat){
+
+    public void erase(CategoryFood cat){
         if (cat == CategoryFood.afternoonSnack){
             menuAfternoonSnack.clear();
         }else if (cat == CategoryFood.dinner){
@@ -107,6 +137,4 @@ public class Menu {
             menuFastFood.clear();
         }
     }
-
-
 }
